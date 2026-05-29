@@ -1,0 +1,11 @@
+{
+  "name": "sr-theme",
+  "private": true,
+  "scripts": {
+    "build": "tailwindcss -i ./src/tailwind.css -o ./tailwind.min.css --minify",
+    "watch": "tailwindcss -i ./src/tailwind.css -o ./tailwind.min.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}

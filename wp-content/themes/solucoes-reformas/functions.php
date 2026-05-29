@@ -15,8 +15,10 @@ function sr_enqueue() {
     wp_enqueue_style('font-awesome',
         'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
         [], '6.4.0');
-    wp_enqueue_style('sr-style', get_stylesheet_uri(), [], '1.0');
-    wp_enqueue_script('tailwind', 'https://cdn.tailwindcss.com', [], null, false);
+    wp_enqueue_style('tailwind',
+        get_template_directory_uri() . '/tailwind.min.css',
+        [], '1.1');
+    wp_enqueue_style('sr-style', get_stylesheet_uri(), ['tailwind'], '1.1');
 }
 add_action('wp_enqueue_scripts', 'sr_enqueue');
 

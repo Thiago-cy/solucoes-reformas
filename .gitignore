@@ -5,3 +5,4 @@ wp-content/upgrade/
 .DS_Store
 Thumbs.db
 *.log
+wp-content/themes/solucoes-reformas/node_modules/
