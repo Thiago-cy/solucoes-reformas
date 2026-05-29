@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "WordPress",
+      "runtimeExecutable": "C:\\laragon\\bin\\apache\\httpd-2.4.66-260223-Win64-VS18\\bin\\httpd.exe",
+      "runtimeArgs": ["-f", "C:\\laragon\\bin\\apache\\httpd-2.4.66-260223-Win64-VS18\\conf\\httpd.conf"],
+      "port": 80
+    }
+  ]
+}

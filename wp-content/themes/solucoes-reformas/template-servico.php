@@ -67,7 +67,7 @@ get_header();
                 Barra da Tijuca · Recreio · e região · Rio de Janeiro
             </div>
 
-            <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
                 <?php echo wp_kses_post( $s['hero_title'] ); ?>
             </h1>
             <p class="text-lg md:text-xl text-slate-300 font-light mb-10 max-w-2xl leading-relaxed">

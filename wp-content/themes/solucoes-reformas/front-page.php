@@ -4,7 +4,7 @@
 <section id="inicio" class="bg-hero min-h-screen flex items-center">
     <div class="container mx-auto px-6">
         <div class="max-w-3xl py-12">
-            <div class="inline-flex items-center flex-wrap justify-center gap-x-1 bg-amber-600/20 border border-amber-500/30 backdrop-blur-sm text-amber-300 px-5 py-2 rounded-full text-base font-semibold mb-6">
+            <div class="inline-flex items-center flex-wrap justify-center gap-x-1 gap-y-1 bg-amber-600/20 border border-amber-500/30 backdrop-blur-sm text-amber-300 px-4 py-2 rounded-full text-sm sm:text-base font-semibold mb-6">
                 <i class="fas fa-map-marker-alt mr-2"></i>
                 <a href="<?php echo home_url('/barra-recreio/'); ?>" class="hover:text-white transition underline underline-offset-2 decoration-amber-400/50">Barra da Tijuca</a>
                 <span class="mx-1 opacity-50">·</span>
@@ -14,10 +14,10 @@
                 <span class="mx-1 opacity-50">·</span>
                 <span>E Região</span>
             </div>
-            <h2 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
                 Soluções completas para sua obra. <br><span class="text-amber-300">Do alicerce ao acabamento.</span>
             </h2>
-            <p class="text-lg md:text-xl text-slate-300 font-light mb-10 max-w-2xl leading-relaxed">
+            <p class="text-base sm:text-lg md:text-xl text-slate-300 font-light mb-10 max-w-2xl leading-relaxed">
                 Somos especialistas em construção, reformas estruturais e manutenção predial e residencial. Agilidade, segurança técnica e entrega pontual.
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
@@ -76,7 +76,7 @@
             <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Serviços Oferecidos</h2>
             <p class="text-slate-600">Reunimos todas as especialidades. Clique no serviço para ver os detalhes.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="services-grid"></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="services-grid"></div>
     </div>
 </section>
 
@@ -250,7 +250,7 @@ $review_url = SR_GOOGLE_PLACE_ID
             $stars = intval($r['rating'] ?? 5);
             $date  = !empty($r['relative_time_description']) ? $r['relative_time_description'] : '';
         ?>
-        <div class="bg-white rounded-xl border border-slate-100 shadow-sm mx-3 shrink-0 p-5 flex flex-col gap-2.5" style="width:270px;">
+        <div class="bg-white rounded-xl border border-slate-100 shadow-sm mx-3 shrink-0 p-5 flex flex-col gap-2.5" style="width:min(270px, calc(100vw - 48px));">
             <!-- Cabeçalho do card -->
             <div class="flex items-center justify-between">
                 <div class="flex items-center gap-2.5 min-w-0">
@@ -477,11 +477,11 @@ document.querySelectorAll('.faq-btn').forEach(function(btn) {
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_subject" value="Novo contato — Site Soluções & Reformas">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <input type="text" name="Nome" placeholder="Nome Completo" class="w-full bg-slate-50 border border-slate-200 rounded-md px-4 py-3 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500" required>
-                    <input type="tel" name="Telefone" placeholder="Telefone / WhatsApp" class="w-full bg-slate-50 border border-slate-200 rounded-md px-4 py-3 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500" oninput="mascaraTelefone(event)" maxlength="15" required>
+                    <input type="text" name="Nome" placeholder="Nome Completo" class="w-full bg-slate-50 border border-slate-200 rounded-md px-4 py-3 text-base focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500" required>
+                    <input type="tel" name="Telefone" placeholder="Telefone / WhatsApp" class="w-full bg-slate-50 border border-slate-200 rounded-md px-4 py-3 text-base focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500" oninput="mascaraTelefone(event)" maxlength="15" required>
                 </div>
-                <input type="email" name="Email" placeholder="Seu melhor E-mail" class="w-full bg-slate-50 border border-slate-200 rounded-md px-4 py-3 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500" required>
-                <select name="Servico" class="w-full bg-slate-50 border border-slate-200 rounded-md px-4 py-3 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500" required>
+                <input type="email" name="Email" placeholder="Seu melhor E-mail" class="w-full bg-slate-50 border border-slate-200 rounded-md px-4 py-3 text-base focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500" required>
+                <select name="Servico" class="w-full bg-slate-50 border border-slate-200 rounded-md px-4 py-3 text-base focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500" required>
                     <option value="">Selecione o Serviço Principal...</option>
                     <?php
                     $service_options = ['Reformas em Geral','Pedreiro','Pintor','Gesseiro','Marceneiro','Telhadista','Bombeiro Hidráulico','Desentupimento','Detecção de Vazamentos','Eletricista','Gasista, Aquecedores e Boiler',"Bomba D'Água",'Inspeções Prediais e Fachadas','Contrato de Manutenção Predial','Portão Eletrônico e Controle de Acesso','CFTV','Piscinas'];

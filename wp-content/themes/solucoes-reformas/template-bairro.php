@@ -43,7 +43,7 @@ $wa_msg = rawurlencode( "Olá! Vi o site de vocês e gostaria de um orçamento. 
                 <i class="fas fa-map-marker-alt mr-2"></i> <?php echo esc_html( $nome ); ?> · Rio de Janeiro
             </div>
 
-            <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
                 Reforma e Construção<br><span class="text-amber-300"><?php echo esc_html( $em ); ?></span>
             </h1>
             <p class="text-lg text-slate-300 font-light mb-10 max-w-2xl leading-relaxed">

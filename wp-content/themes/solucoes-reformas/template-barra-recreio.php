@@ -24,7 +24,7 @@ $wa_url = 'https://wa.me/5521999989553?text=' . rawurlencode( "Olá! Vi o site d
                 <i class="fas fa-map-marker-alt mr-2"></i> Barra da Tijuca · Recreio · Rio de Janeiro
             </div>
 
-            <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
                 Reforma e Construção na<br><span class="text-amber-300">Barra e Recreio</span>
             </h1>
             <p class="text-lg text-slate-300 font-light mb-10 max-w-2xl leading-relaxed">

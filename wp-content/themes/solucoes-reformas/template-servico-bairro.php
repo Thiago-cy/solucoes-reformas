@@ -95,7 +95,7 @@ get_header();
                 <?php echo esc_html( $bn ); ?> · Rio de Janeiro
             </div>
 
-            <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
                 <?php echo esc_html( $s['title'] ); ?>
                 <span class="text-amber-300"><?php echo esc_html( ucfirst( $b_em ) ); ?></span>
             </h1>

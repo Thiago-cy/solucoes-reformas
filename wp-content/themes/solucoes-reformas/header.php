@@ -30,9 +30,9 @@ if ( is_page() ) {
 
 <!-- BOTÃO WHATSAPP FLUTUANTE -->
 <a onclick="window.open('<?php echo esc_js( $wa_float_url ); ?>','_blank')"
-   class="fixed bottom-8 right-6 md:bottom-10 md:right-10 z-[45] group cursor-pointer"
+   class="fixed bottom-4 right-3 sm:bottom-6 sm:right-5 md:bottom-10 md:right-10 z-[45] group cursor-pointer"
    aria-label="Falar pelo WhatsApp">
-    <div class="relative w-14 h-14 md:w-16 md:h-16">
+    <div class="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16">
         <span class="absolute inset-0 rounded-full bg-emerald-400 opacity-40 animate-ping"></span>
         <span class="relative flex items-center justify-center w-full h-full bg-emerald-500 hover:bg-emerald-600 rounded-full shadow-2xl shadow-emerald-500/50 text-white text-2xl md:text-3xl transition-all duration-300 group-hover:scale-110">
             <i class="fab fa-whatsapp"></i>
@@ -102,7 +102,7 @@ if ( is_page() ) {
                     </a>
                     <!-- Mega-menu -->
                     <div id="dd-panel-servicos"
-                         class="hidden absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[660px] bg-white rounded-2xl shadow-2xl border border-slate-100 z-50">
+                         class="hidden absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[min(660px,90vw)] bg-white rounded-2xl shadow-2xl border border-slate-100 z-50">
                         <div class="p-6">
                             <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Nossos Serviços</p>
                             <div class="grid grid-cols-3 gap-1">
@@ -187,7 +187,7 @@ if ( is_page() ) {
 
             <!-- Hambúrguer — mobile -->
             <button id="sr-menu-btn"
-                    class="md:hidden flex flex-col justify-center gap-[5px] w-10 h-10 rounded-md hover:bg-slate-100 transition p-2"
+                    class="md:hidden flex flex-col justify-center gap-[5px] w-12 h-12 rounded-md hover:bg-slate-100 transition p-2.5"
                     aria-label="Abrir menu">
                 <span class="block w-full h-0.5 bg-slate-800 transition-all duration-300 origin-center" id="sr-b1"></span>
                 <span class="block w-full h-0.5 bg-slate-800 transition-all duration-300"                id="sr-b2"></span>
