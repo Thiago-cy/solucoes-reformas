@@ -1,0 +1,50 @@
+/*
+Theme Name: Soluções & Reformas
+Theme URI: https://solucoesreformas.com.br
+Author: Soluções & Reformas RJ
+Description: Tema oficial Soluções & Reformas — Especialista em Reformas e Manutenções no Rio de Janeiro.
+Version: 1.0
+Text Domain: solucoes-reformas
+*/
+
+/* ─── Base ─────────────────────────────────────────────── */
+body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+
+/* ─── Hero homepage ─────────────────────────────────────── */
+.bg-hero {
+    background: linear-gradient(to right, rgba(15,23,42,0.95), rgba(15,23,42,0.7)),
+                url('images/hero-bg.png') center/cover no-repeat fixed;
+}
+
+/* ─── Service cards (homepage) ──────────────────────────── */
+.service-card { transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
+.service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 25px -5px rgba(0,0,0,.1),0 10px 10px -5px rgba(0,0,0,.04); border-color:#D97706; border-top:3px solid #D97706; }
+.service-card:hover .service-icon { transform: scale(1.15); }
+.service-card:hover .service-icon-wrap { background-color:#FEF3C7; }
+
+/* ─── Service cards (mini-grid pages) ───────────────────── */
+.svc-card { transition: all 0.3s ease; }
+.svc-card:hover { transform: translateY(-4px); border-color:#D97706; box-shadow:0 10px 25px -5px rgba(37,99,235,.15); }
+
+/* ─── Modal scrollbar ───────────────────────────────────── */
+.modal-scroll::-webkit-scrollbar { width:6px; }
+.modal-scroll::-webkit-scrollbar-track { background:#f1f5f9; }
+.modal-scroll::-webkit-scrollbar-thumb { background:#cbd5e1; border-radius:10px; }
+
+/* ─── Logo animation ────────────────────────────────────── */
+.logo-svg { transition: transform 0.4s ease; }
+.group:hover .logo-svg { transform: scale(1.05); }
+
+/* ─── Portfolio ─────────────────────────────────────────── */
+.portfolio-img { transition: transform 0.7s ease; }
+.portfolio-item:hover .portfolio-img { transform: scale(1.1); }
+.portfolio-hover-content { transform: translateY(20px); transition: all 0.4s ease; }
+.portfolio-item:hover .portfolio-hover-content { transform: translateY(0); }
+
+/* ─── Custom SVG icons ──────────────────────────────────── */
+.icon-telha{display:inline-block!important;width:2.25rem!important;height:2.25rem!important;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 24 16' xmlns='http://www.w3.org/2000/svg' fill='%23D97706'%3E%3Cpath d='M0 4Q3 0 6 4Q9 0 12 4Q15 0 18 4Q21 0 24 4L24 9L0 9Z'/%3E%3Cpath d='M0 13Q3 9 6 13Q9 9 12 13Q15 9 18 13Q21 9 24 13L24 17L0 17Z' opacity='.72'/%3E%3C/svg%3E") no-repeat center/contain!important;vertical-align:middle!important;}
+.icon-telha::before{content:""!important;font-size:0!important;}
+.icon-bomba{display:inline-block!important;width:2.25rem!important;height:2.25rem!important;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 26 20' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='16.5' width='16' height='2.5' rx='1' fill='%23D97706'/%3E%3Crect x='3' y='14' width='2' height='3' fill='%23D97706'/%3E%3Crect x='11.5' y='14' width='2' height='3' fill='%23D97706'/%3E%3Cpath d='M11 5 L4.5 5 Q1 5 1 10 Q1 15 4.5 15 L11 15 Z' fill='%23D97706'/%3E%3Crect x='5' y='5' width='0.8' height='10' rx='0.3' fill='white'/%3E%3Crect x='6' y='7' width='4.5' height='1' rx='0.4' fill='white'/%3E%3Crect x='6' y='9' width='4.5' height='1' rx='0.4' fill='white'/%3E%3Crect x='6' y='11' width='4.5' height='1' rx='0.4' fill='white'/%3E%3Crect x='6' y='13' width='4.5' height='1' rx='0.4' fill='white'/%3E%3Crect x='11' y='3' width='4.5' height='12' rx='0.5' fill='%23D97706'/%3E%3Crect x='12' y='5.5' width='2.5' height='6' rx='0.3' fill='white'/%3E%3Cpath d='M15.5 10 L18 10 L18 7 L23.5 7' fill='none' stroke='%23D97706' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cline x1='23.5' y1='5.5' x2='23.5' y2='8.5' stroke='%23D97706' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/contain!important;vertical-align:middle!important;}
+.icon-bomba::before{content:""!important;font-size:0!important;}
+.icon-vazamento{display:inline-block!important;width:2.25rem!important;height:2.25rem!important;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='9.5' cy='9.5' r='6.5' fill='none' stroke='%23D97706' stroke-width='2.2'/%3E%3Cline x1='14.2' y1='14.2' x2='21' y2='21' stroke='%23D97706' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M9.5 5.5 C9.5 5.5 7 9 7 11 C7 12.38 8.12 13.5 9.5 13.5 C10.88 13.5 12 12.38 12 11 C12 9 9.5 5.5 9.5 5.5 Z' fill='%23D97706'/%3E%3C/svg%3E") no-repeat center/contain!important;vertical-align:middle!important;}
+.icon-vazamento::before{content:""!important;font-size:0!important;}

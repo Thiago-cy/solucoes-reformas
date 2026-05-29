@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Hexagon background -->
+  <path d="M24 2L43.0526 13V35L24 46L4.94744 35V13L24 2Z" fill="#FFFBEB"/>
+  <!-- Hexagon border -->
+  <path d="M24 2L43.0526 13V35L24 46L4.94744 35V13L24 2Z" stroke="#D97706" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- House shape -->
+  <path d="M24 10L12 20V36H36V20L24 10Z" fill="#D97706"/>
+  <!-- Vertical center line -->
+  <path d="M24 18V36" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Horizontal floor line -->
+  <path d="M18 26H30" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Left door panel -->
+  <rect x="16" y="29" width="4" height="4" fill="#FFFFFF"/>
+  <!-- Right door panel -->
+  <rect x="28" y="29" width="4" height="4" fill="#FFFFFF"/>
+</svg>
