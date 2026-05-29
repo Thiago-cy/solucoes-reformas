@@ -50,12 +50,12 @@
 
     <!-- Navbar principal -->
     <header id="sr-header" class="bg-white shadow-sm border-b border-slate-100 transition-shadow duration-300">
-        <div id="sr-header-inner" class="container mx-auto px-3 md:px-4 xl:px-6 flex justify-between items-center" style="padding-top:14px;padding-bottom:14px;">
+        <div id="sr-header-inner" class="container mx-auto px-3 md:px-4 xl:px-6 flex justify-between items-center" style="padding-top:38px;padding-bottom:38px;">
 
             <!-- Logo -->
             <a href="<?php echo home_url('/'); ?>" class="flex items-center gap-2 shrink-0">
-                <svg id="sr-logo-svg" width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"
-                     class="xl:w-12 xl:h-12 shrink-0 transition-all duration-300">
+                <svg id="sr-logo-svg" width="42" height="42" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"
+                     class="xl:w-14 xl:h-14 shrink-0 transition-all duration-300">
                     <path d="M24 2L43.0526 13V35L24 46L4.94744 35V13L24 2Z" fill="#FFFBEB"/>
                     <path d="M24 2L43.0526 13V35L24 46L4.94744 35V13L24 2Z" stroke="#D97706" stroke-width="2.5" stroke-linejoin="round"/>
                     <path d="M24 10L12 20V36H36V20L24 10Z" fill="#D97706"/>
@@ -65,8 +65,8 @@
                     <rect x="28" y="29" width="4" height="4" fill="#FFFFFF"/>
                 </svg>
                 <div>
-                    <p class="text-base md:text-xl xl:text-3xl font-black text-slate-900 tracking-tight leading-none">SOLUÇÕES<span class="text-amber-600">&amp;</span>REFORMAS</p>
-                    <span id="sr-logo-sub" class="hidden xl:block text-xs font-bold text-slate-400 tracking-[0.15em] uppercase transition-all duration-300">Reformas e Manutenções · Rio de Janeiro</span>
+                    <p class="text-lg md:text-2xl xl:text-3xl font-black text-slate-900 tracking-tight leading-none">SOLUÇÕES<span class="text-amber-600">&amp;</span>REFORMAS</p>
+                    <span id="sr-logo-sub" class="hidden lg:block text-xs font-bold text-slate-400 tracking-[0.15em] uppercase transition-all duration-300">Reformas e Manutenções · Rio de Janeiro</span>
                 </div>
             </a>
 
@@ -395,14 +395,14 @@
 
     function applyScroll () {
         if (window.scrollY > 60) {
-            inner.style.paddingTop    = '16px';
-            inner.style.paddingBottom = '16px';
+            inner.style.paddingTop    = '24px';
+            inner.style.paddingBottom = '24px';
             if (logoSub) logoSub.style.opacity = '0';
             header.classList.add('shadow-md');
             header.classList.remove('shadow-sm');
         } else {
-            inner.style.paddingTop    = '26px';
-            inner.style.paddingBottom = '26px';
+            inner.style.paddingTop    = '38px';
+            inner.style.paddingBottom = '38px';
             if (logoSub) logoSub.style.opacity = '1';
             header.classList.remove('shadow-md');
             header.classList.add('shadow-sm');
