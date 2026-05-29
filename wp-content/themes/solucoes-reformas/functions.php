@@ -658,11 +658,6 @@ function sr_seo_head() {
             $description = 'Todos os serviços de reforma e manutenção na Barra da Tijuca, Recreio dos Bandeirantes, Vargem Grande e região. Equipe especializada com orçamento grátis.';
             $canonical   = home_url( '/barra-recreio/' );
 
-        } elseif ( $template === 'template-zona-sul.php' ) {
-            $title       = 'Reformas e Manutenções na Zona Sul do Rio | Soluções & Reformas';
-            $description = 'Serviços de reforma e manutenção em toda a Zona Sul do Rio de Janeiro. Eletricista, pedreiro, pintor, marceneiro e mais. Orçamento grátis pelo WhatsApp.';
-            $canonical   = home_url( '/zona-sul/' );
-
         } elseif ( $template === 'template-bairro.php' ) {
             $all_bairros = sr_neighborhoods_data();
             $bairro      = $all_bairros[ $slug ] ?? null;
@@ -805,9 +800,6 @@ function sr_document_title( $parts ) {
         } elseif ( $template === 'template-barra-recreio.php' ) {
             $parts['title'] = 'Reformas na Barra da Tijuca e Recreio';
 
-        } elseif ( $template === 'template-zona-sul.php' ) {
-            $parts['title'] = 'Reformas na Zona Sul do Rio de Janeiro';
-
         } elseif ( $template === 'template-bairro.php' ) {
             $all_bairros = sr_neighborhoods_data();
             $bairro      = $all_bairros[ $slug ] ?? null;
@@ -862,8 +854,6 @@ function sr_meta_tags() {
         } elseif ( $template === 'template-barra-recreio.php' ) {
             $desc = 'Reformas e manutenção na Barra da Tijuca e Recreio dos Bandeirantes. Equipe completa: eletricista, pedreiro, pintor, gesseiro e mais. Soluções & Reformas · Rio de Janeiro.';
 
-        } elseif ( $template === 'template-zona-sul.php' ) {
-            $desc = 'Reformas e manutenção na Zona Sul do Rio de Janeiro. Eletricista, pedreiro, pintor, gesseiro e mais. Orçamento pelo WhatsApp. Soluções & Reformas.';
         }
     }
 
