@@ -58,7 +58,7 @@ get_header();
 </div>
 
 <!-- HERO -->
-<section class="hero-bg py-24 md:py-36" style="background:linear-gradient(to right,rgba(15,23,42,.93),rgba(15,23,42,.65)),url('<?php echo $hero_url; ?>') center/cover no-repeat fixed;">
+<section class="hero-bg py-24 md:py-36" style="background:linear-gradient(to right,rgba(15,23,42,.93),rgba(15,23,42,.65)),url('<?php echo $hero_url; ?>') center/cover no-repeat;">
     <div class="container mx-auto px-6">
         <div class="max-w-3xl py-6">
 

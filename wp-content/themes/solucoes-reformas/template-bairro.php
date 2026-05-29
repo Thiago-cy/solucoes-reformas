@@ -27,7 +27,7 @@ $wa_msg = rawurlencode( "Olá! Vi o site de vocês e gostaria de um orçamento. 
 
 <!-- HERO -->
 <section class="min-h-[500px] flex items-center py-20"
-         style="background:linear-gradient(to right,rgba(15,23,42,.93),rgba(15,23,42,.60)),url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;">
+         style="background:linear-gradient(to right,rgba(15,23,42,.93),rgba(15,23,42,.60)),url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;">
     <div class="container mx-auto px-6">
         <div class="max-w-3xl">
 

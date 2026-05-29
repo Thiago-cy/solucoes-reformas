@@ -86,7 +86,7 @@ get_header();
 
 <!-- HERO -->
 <section class="min-h-[520px] flex items-center py-20"
-         style="background:linear-gradient(to right,rgba(15,23,42,.93),rgba(15,23,42,.65)),url('<?php echo $hero_url; ?>') center/cover no-repeat fixed;">
+         style="background:linear-gradient(to right,rgba(15,23,42,.93),rgba(15,23,42,.65)),url('<?php echo $hero_url; ?>') center/cover no-repeat;">
     <div class="container mx-auto px-6">
         <div class="max-w-3xl">
 
