@@ -20,13 +20,29 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'database_name_here' );
+define( 'DB_NAME', 'solucoes_reformas' );
 
 /** Database username */
-define( 'DB_USER', 'username_here' );
+define( 'DB_USER', 'root' );
 
 /** Database password */
-define( 'DB_PASSWORD', 'password_here' );
+define( 'DB_PASSWORD', '' );
+
+// ── URL dinâmica: ngrok ou local ─────────────────────────────────────────────
+// Quando rodando via ngrok, usa a URL pública automaticamente.
+// Quando rodando local (Laragon), usa o domínio .test.
+if ( ! empty( $_SERVER['HTTP_X_FORWARDED_HOST'] ) ) {
+    $tunnel_proto = ! empty( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) ? $_SERVER['HTTP_X_FORWARDED_PROTO'] : 'https';
+    $tunnel_host  = $_SERVER['HTTP_X_FORWARDED_HOST'];
+    define( 'WP_HOME',    $tunnel_proto . '://' . $tunnel_host );
+    define( 'WP_SITEURL', $tunnel_proto . '://' . $tunnel_host );
+    $_SERVER['HTTPS']     = 'on';
+    $_SERVER['HTTP_HOST'] = $tunnel_host;
+} else {
+    define( 'WP_HOME',    'http://solucoes-reformas.test' );
+    define( 'WP_SITEURL', 'http://solucoes-reformas.test' );
+}
+define( 'FORCE_SSL_ADMIN', false );
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );

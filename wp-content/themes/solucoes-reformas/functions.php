@@ -820,4 +820,69 @@ function sr_document_title( $parts ) {
 }
 add_filter( 'document_title_parts', 'sr_document_title' );
 
+// ── Meta description + Open Graph dinâmicos ──────────────────────────────────
+function sr_meta_tags() {
+    global $post;
+
+    $og_image = get_template_directory_uri() . '/images/cozinha-depois.png';
+    $og_url   = home_url('/');
+    $desc     = 'Reformas completas na Barra da Tijuca, Recreio e região. Eletricista, pedreiro, pintor, gesseiro e mais. Profissionais uniformizados, nota fiscal e garantia por escrito.';
+
+    if ( is_front_page() ) {
+        $og_url = home_url('/');
+        $desc   = 'Reformas completas na Barra da Tijuca, Recreio e região. Eletricista, pedreiro, pintor, gesseiro e mais. Profissionais uniformizados, nota fiscal e garantia por escrito.';
+
+    } elseif ( is_page() && $post ) {
+        $template    = get_page_template_slug( $post->ID );
+        $slug        = $post->post_name;
+        $all_svcs    = sr_services_data();
+        $all_bairros = sr_neighborhoods_data();
+        $og_url      = get_permalink();
+
+        if ( $template === 'template-servico.php' ) {
+            $s    = $all_svcs[ $slug ] ?? null;
+            $nome = $s ? $s['title'] : get_the_title();
+            $desc = $nome . ' na Barra da Tijuca, Recreio e região. Profissionais qualificados, orçamento rápido pelo WhatsApp, nota fiscal e garantia por escrito. Soluções & Reformas.';
+
+        } elseif ( $template === 'template-servico-bairro.php' ) {
+            $svc_slug    = get_post_meta( $post->ID, 'servico_slug', true );
+            $bairro_slug = get_post_meta( $post->ID, 'bairro_slug', true );
+            $svc         = $all_svcs[ $svc_slug ]       ?? null;
+            $bairro      = $all_bairros[ $bairro_slug ] ?? null;
+            if ( $svc && $bairro ) {
+                $desc = $svc['title'] . ' ' . $bairro['em'] . '. Profissional qualificado, atendimento rápido e garantia por escrito. Peça seu orçamento pelo WhatsApp agora. Soluções & Reformas.';
+            }
+
+        } elseif ( $template === 'template-bairro.php' ) {
+            $bairro = $all_bairros[ $slug ] ?? null;
+            if ( $bairro ) {
+                $desc = 'Serviços de reforma e manutenção ' . $bairro['em'] . '. Eletricista, pedreiro, pintor, gesseiro e mais. Orçamento pelo WhatsApp. Soluções & Reformas · Rio de Janeiro.';
+            }
+
+        } elseif ( $template === 'template-barra-recreio.php' ) {
+            $desc = 'Reformas e manutenção na Barra da Tijuca e Recreio dos Bandeirantes. Equipe completa: eletricista, pedreiro, pintor, gesseiro e mais. Soluções & Reformas · Rio de Janeiro.';
+
+        } elseif ( $template === 'template-zona-sul.php' ) {
+            $desc = 'Reformas e manutenção na Zona Sul do Rio de Janeiro. Eletricista, pedreiro, pintor, gesseiro e mais. Orçamento pelo WhatsApp. Soluções & Reformas.';
+        }
+    }
+
+    $title = wp_get_document_title();
+    ?>
+<meta name="description" content="<?php echo esc_attr( $desc ); ?>">
+<meta name="robots"      content="index, follow">
+<meta property="og:type"        content="website">
+<meta property="og:site_name"   content="Soluções &amp; Reformas">
+<meta property="og:title"       content="<?php echo esc_attr( $title ); ?>">
+<meta property="og:description" content="<?php echo esc_attr( $desc ); ?>">
+<meta property="og:url"         content="<?php echo esc_url( $og_url ); ?>">
+<meta property="og:image"       content="<?php echo esc_url( $og_image ); ?>">
+<meta property="og:locale"      content="pt_BR">
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="<?php echo esc_attr( $title ); ?>">
+<meta name="twitter:description" content="<?php echo esc_attr( $desc ); ?>">
+<meta name="twitter:image"       content="<?php echo esc_url( $og_image ); ?>">
+    <?php
+}
+add_action( 'wp_head', 'sr_meta_tags', 1 );
 
