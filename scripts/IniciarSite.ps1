@@ -21,7 +21,7 @@ if (-not (Get-Process -Name "mysqld" -ErrorAction SilentlyContinue)) {
 
 # ── 3. Inicia ngrok na porta 80 ───────────────────────────────────────────────
 if (-not (Get-Process -Name "ngrok" -ErrorAction SilentlyContinue)) {
-    Start-Process $ngrokExe -ArgumentList "http 80 --host-header=solucoes-reformas.test" -WindowStyle Minimized
+    Start-Process $ngrokExe -ArgumentList "http 80" -WindowStyle Minimized
     Start-Sleep -Seconds 3
 }
 

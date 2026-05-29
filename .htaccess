@@ -2,7 +2,7 @@
 # Redireciona favicon.ico para favicon.svg
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteRule ^favicon\.ico$ /solucoes-reformas/wp-content/themes/solucoes-reformas/favicon.svg [R=301,L]
+RewriteRule ^favicon\.ico$ /wp-content/themes/solucoes-reformas/favicon.svg [R=301,L]
 </IfModule>
 
 # BEGIN WordPress
@@ -12,11 +12,11 @@ RewriteRule ^favicon\.ico$ /solucoes-reformas/wp-content/themes/solucoes-reforma
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-RewriteBase /solucoes-reformas/
+RewriteBase /
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /solucoes-reformas/index.php [L]
+RewriteRule . /index.php [L]
 </IfModule>
 
 # END WordPress

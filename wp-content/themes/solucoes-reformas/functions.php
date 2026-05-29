@@ -209,7 +209,7 @@ function sr_services_data() {
             'title'       => 'Desentupimento',
             'hero_title'  => 'Desentupimento <span class="text-amber-300">Rápido e Sem Bagunça</span>',
             'hero_desc'   => 'Desobstrução de pias, vasos, ralos e caixas de gordura com equipamento especializado. Atendimento rápido no Rio de Janeiro.',
-            'hero_image'  => 'photo-1584622650111-993a426fbf0a',
+            'hero_image'  => 'photo-1676210134188-4c05dd172f89',
             'icon'        => 'fa-tint-slash',
             'wa_message'  => "Olá! Preciso de desentupimento urgente.",
             'services'    => [
@@ -271,7 +271,7 @@ function sr_services_data() {
             'title'       => 'Portão Eletrônico e Controle de Acesso',
             'hero_title'  => 'Acesso Seguro e <span class="text-amber-300">Automatizado</span>',
             'hero_desc'   => 'Instalação e manutenção de portões automáticos, fechaduras digitais e sistemas de controle de acesso para residências e condomínios.',
-            'hero_image'  => 'photo-1580047750144-2c7790adf461',
+            'hero_image'  => 'photo-1645005049035-c35644b627ba',
             'icon'        => 'fa-door-open',
             'wa_message'  => "Olá! Preciso de serviço de portão eletrônico.",
             'services'    => [

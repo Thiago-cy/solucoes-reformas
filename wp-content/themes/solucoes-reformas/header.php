@@ -10,12 +10,27 @@
 </head>
 <body <?php body_class('bg-slate-50 text-slate-800'); ?>>
 <?php wp_body_open(); ?>
-<?php $wa_float_url = 'https://wa.me/5521999989553?text=' . rawurlencode( "Olá! Vi o site de vocês e gostaria de um orçamento\n\nMeu nome: \nMeu bairro: \nServiço que preciso: " ); ?>
+<?php
+$wa_float_url = 'https://wa.me/5521999989553?text=' . rawurlencode( "Olá! Vi o site de vocês e gostaria de um orçamento\n\nMeu nome: \nMeu bairro: \nServiço que preciso: " );
+
+// Detecta serviço atual para linkar {servico}-{bairro} no menu de regiões
+$current_service_slug = null;
+if ( is_page() ) {
+    global $post;
+    $tpl = get_page_template_slug();
+    if ( $tpl === 'template-servico.php' ) {
+        // Página de serviço: o slug da página é o slug do serviço
+        $current_service_slug = $post->post_name;
+    } elseif ( $tpl === 'template-servico-bairro.php' ) {
+        // Página serviço+bairro: serviço está no meta
+        $current_service_slug = get_post_meta( $post->ID, 'servico_slug', true );
+    }
+}
+?>
 
 <!-- BOTÃO WHATSAPP FLUTUANTE -->
-<a href="<?php echo esc_attr( $wa_float_url ); ?>"
-   class="fixed bottom-8 right-6 md:bottom-10 md:right-10 z-[45] group"
-   target="_blank"
+<a onclick="window.open('<?php echo esc_js( $wa_float_url ); ?>','_blank')"
+   class="fixed bottom-8 right-6 md:bottom-10 md:right-10 z-[45] group cursor-pointer"
    aria-label="Falar pelo WhatsApp">
     <div class="relative w-14 h-14 md:w-16 md:h-16">
         <span class="absolute inset-0 rounded-full bg-emerald-400 opacity-40 animate-ping"></span>
@@ -127,8 +142,12 @@
                          class="hidden absolute top-full left-1/2 -translate-x-1/2 mt-2 w-60 bg-white rounded-2xl shadow-2xl border border-slate-100 z-50">
                         <div class="p-4">
                             <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Bairros Atendidos</p>
-                            <?php foreach ( sr_neighborhoods_data() as $bslug => $b ) : ?>
-                            <a href="<?php echo esc_url( home_url( '/' . $bslug . '/' ) ); ?>"
+                            <?php foreach ( sr_neighborhoods_data() as $bslug => $b ) :
+                                $bairro_url = $current_service_slug
+                                    ? home_url( '/' . $current_service_slug . '-' . $bslug . '/' )
+                                    : home_url( '/' . $bslug . '/' );
+                            ?>
+                            <a href="<?php echo esc_url( $bairro_url ); ?>"
                                class="flex items-center gap-2.5 px-3 py-2 rounded-xl hover:bg-amber-50 hover:text-amber-700 transition-colors text-base font-semibold text-slate-700">
                                 <i class="fas fa-map-marker-alt text-amber-500 w-3.5 text-center text-sm shrink-0"></i>
                                 <?php echo esc_html($b['nome']); ?>
@@ -217,8 +236,12 @@
                         <i class="fas fa-chevron-down text-xs text-slate-400 transition-transform duration-200 sr-acc-icon"></i>
                     </button>
                     <div class="sr-acc-panel hidden pl-8 py-1 border-b border-slate-100">
-                        <?php foreach ( sr_neighborhoods_data() as $bslug => $b ) : ?>
-                        <a href="<?php echo esc_url( home_url( '/' . $bslug . '/' ) ); ?>"
+                        <?php foreach ( sr_neighborhoods_data() as $bslug => $b ) :
+                            $bairro_url_mob = $current_service_slug
+                                ? home_url( '/' . $current_service_slug . '-' . $bslug . '/' )
+                                : home_url( '/' . $bslug . '/' );
+                        ?>
+                        <a href="<?php echo esc_url( $bairro_url_mob ); ?>"
                            class="block py-2 text-sm text-slate-600 hover:text-amber-600 border-b border-slate-50 transition last:border-0">
                             <?php echo esc_html($b['nome']); ?>
                         </a>
