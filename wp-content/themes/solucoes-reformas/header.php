@@ -417,16 +417,21 @@ if ( is_page() ) {
     var fixedWrap  = document.querySelector('.fixed.w-full.top-0');
 
     function applyScroll () {
+        var isDesktop = window.innerWidth >= 768;
         if (window.scrollY > 60) {
-            inner.style.paddingTop    = '24px';
-            inner.style.paddingBottom = '24px';
-            if (logoSub) logoSub.style.opacity = '0';
+            if (isDesktop) {
+                inner.style.paddingTop    = '24px';
+                inner.style.paddingBottom = '24px';
+                if (logoSub) logoSub.style.opacity = '0';
+            }
             header.classList.add('shadow-md');
             header.classList.remove('shadow-sm');
         } else {
-            inner.style.paddingTop    = '38px';
-            inner.style.paddingBottom = '38px';
-            if (logoSub) logoSub.style.opacity = '1';
+            if (isDesktop) {
+                inner.style.paddingTop    = '38px';
+                inner.style.paddingBottom = '38px';
+                if (logoSub) logoSub.style.opacity = '1';
+            }
             header.classList.remove('shadow-md');
             header.classList.add('shadow-sm');
         }
